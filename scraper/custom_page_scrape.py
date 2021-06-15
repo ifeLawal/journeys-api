@@ -5,9 +5,15 @@ from sqlalchemy.orm import sessionmaker
 
 from connecting import get_engine
 from models import Comments, Covers, Locations, Movies, Pictures
-from scraper.helpers import (alt_select_sections, get_img_paths,
-                             get_sections_from_root, get_text, get_url_routes,
-                             save_image, select_section)
+from scraper.helpers import (
+    alt_select_sections,
+    get_img_paths,
+    get_sections_from_root,
+    get_text,
+    get_url_routes,
+    save_image,
+    select_section,
+)
 
 engine = get_engine(name="ontheset")
 Session = sessionmaker(engine)

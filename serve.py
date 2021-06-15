@@ -15,7 +15,7 @@ if os.environ.get("PORT"):
     host = "0.0.0.0"
     debug = False
     threaded = False
-    
+
 app = create_app()
 
 app.run(debug=debug, threaded=threaded, host=host, port=port)

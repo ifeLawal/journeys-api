@@ -4,7 +4,6 @@ from marshmallow.exceptions import ValidationError
 from werkzeug.datastructures import ImmutableMultiDict
 
 from journeys.api.schemas.locations import LocationSchema
-from journeys.api.utils.models import build_model_filters
 from models import Locations
 
 locations_namespace = Namespace(
@@ -15,11 +14,6 @@ locations_namespace = Namespace(
 @locations_namespace.route("")
 class LocationList(Resource):
     def get(self):
-        # q = query_args.pop("q", None)
-        # field = str(query_args.pop("field", None))
-        # filters = build_model_filters(model=locations, query=q, field=field)
-
-        # locations = Locations.query.filter_by(**query_args).filter(*filters).all()
         address = request.args("address", "")
         args = []
         if address:
